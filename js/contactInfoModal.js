@@ -28,13 +28,26 @@ function fillPopup(index) {
     // Resetting the info displayed in order to display one contact's info at a time
     contactModaInfo.innerHTML = '';
 
+    // Displays only the contact fields that contain actual (non-empty) data, skipping any missing or empty fields
+    if (contacts[index].name) {
+        contactModaInfo.innerHTML += `<h2 class="contactName">${contacts[index].name}</h2>`
+    }
 
-    contactModaInfo.innerHTML =
-        `<h2 class="contactName">${contacts[index].name}</h2>
-         <p class="contactDetails age">Age: ${contacts[index].age}</p>
-         <p class="contactDetails phoneNumber">Phone Number: ${contacts[index].phoneNum}</p>
-         <p class="contactDetails email">Email: ${contacts[index].email}</p>
-         <p class="contactDetails contactAddress">Address: ${contacts[index].address}</p>`;
+    if (contacts[index].phoneNum) {
+        contactModaInfo.innerHTML += `<p class="contactDetails phoneNumber">Phone Number: ${contacts[index].phoneNum}</p>`
+    }
+
+    if (contacts[index].email) {
+        contactModaInfo.innerHTML += `<p class="contactDetails email">Email: ${contacts[index].email}</p>`
+    }
+
+    if (contacts[index].age) {
+        contactModaInfo.innerHTML += `<p class="contactDetails age">Age: ${contacts[index].age}</p>`
+    }
+
+    if (contacts[index].address) {
+        contactModaInfo.innerHTML += `<p class="contactDetails contactAddress">Address: ${contacts[index].address}</p>`
+    }
 
     modalContent.append(contactModaInfo);
 
@@ -142,3 +155,4 @@ modal.addEventListener('click', e => {
         document.body.style.overflow = 'auto';
     }
 });
+
