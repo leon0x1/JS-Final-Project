@@ -9,6 +9,7 @@ document.getElementById('searchButton').addEventListener('click', e => {
 
     const searchInput = document.getElementById('search');
     const query = searchInput.value.trim().toLowerCase();
+    searchInput.value = '';
 
     if (!query) {
         // If there is no input – show all users
@@ -22,3 +23,4 @@ document.getElementById('searchButton').addEventListener('click', e => {
 
     buildContactList(result);
 });
+
