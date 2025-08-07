@@ -50,7 +50,6 @@ const buildContactList = (contactsArr) => {
         <img src="${elem.image}" class="contactPhoto">
         <div class="contactInfo">
             <h2>${elem.name}</h2>
-            <p>Email: ${elem.email}</p>
             <p>Phone Number: ${elem.phoneNum}</p>
         </div>
         <div class="contactButtons">
