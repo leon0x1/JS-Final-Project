@@ -3,26 +3,22 @@
 ליאון מברין
 יאיל סאלם*/
 
-// Searching contacts by name
+// Search contacts by name (partial, case-insensitive, shows all if empty)
 document.getElementById('searchButton').addEventListener('click', e => {
-
-    const searchTarget = document.getElementById('search');
-
     e.preventDefault();
 
-    if (searchTarget) {
+    const searchInput = document.getElementById('search');
+    const query = searchInput.value.trim().toLowerCase();
 
-
-        let result = contacts.filter(elem => {
-            if (elem.name.toLowerCase() === searchTarget.value.trim().toLowerCase()) {
-                return true;
-            }
-
-            return false;
-
-        });
-
-        buildContactList(result);
+    if (!query) {
+        // If there is no input – show all users
+        buildContactList(contacts);
+        return;
     }
 
+    const result = contacts.filter(contact =>
+        contact.name.toLowerCase().includes(query)
+    );
+
+    buildContactList(result);
 });
