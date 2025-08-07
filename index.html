@@ -1,0 +1,91 @@
+<!-- שמות מגישים:
+ליאון מברין
+יאיל סאלם -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>📞 Phone Book</h1>
+    </header>
+
+    <main>
+        <section class="controls">
+            <form id="searchForm">
+                <input type="text" id="search" placeholder="Search by name..." />
+                <button id="searchButton">Search</button>
+            </form>
+            <div class="buttons">
+                <button id="addContact">➕ Add Contact</button>
+                <button id="deleteAll">🗑️ Delete All</button>
+            </div>
+        </section>
+
+        <ul id="contactList" class="contact-list">
+            <!-- Contacts will be inserted here dynamically -->
+        </ul>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="./aboutus.html">About Us</a>
+            <a href="./contactus.html">Contact Us</a>
+        </nav>
+        <p>&copy; 2025 Yail Salem & Leon Mavrin All rights reserved.</p>
+    </footer>
+
+    <!-- Popup: View Contact Info -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close">×</span>
+        </div>
+    </div>
+
+    <!-- Popup: Add Contact -->
+    <div class="modal" id="newContact">
+        <form class="modal-content">
+            <h2>Add New Contact</h2>
+            <input type="text" id="contactName" placeholder="Full Name" required />
+            <input type="text" id="phoneNum" placeholder="Phone Number" required />
+            <input type="email" id="mail" placeholder="Email (optional)" />
+            <input type="text" id="address" placeholder="Address (optional)" />
+            <input type="number" id="age" placeholder="Age (optional)" />
+            <input type="text" id="image" placeholder="Image URL (optional)" />
+            <div class="modal-buttons">
+                <button id="saveBtn">Save</button>
+                <button id="cancelBtn" type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Popup: Edit Contact -->
+    <div class="modal" id="editContact">
+        <form class="modal-content">
+            <h2>Edit Contact</h2>
+            <input type="text" id="editName" placeholder="Full Name" required />
+            <input type="text" id="editPhoneNum" placeholder="Phone Number" required />
+            <input type="email" id="editMail" placeholder="Email" />
+            <input type="text" id="editAddress" placeholder="Address" />
+            <input type="number" id="editAge" placeholder="Age" />
+            <input type="text" id="editImage" placeholder="Image URL (optional)" />
+            <div class="modal-buttons">
+                <button id="saveChangesBtn">Save Changes</button>
+                <button id="backBtn" type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/contactsList.js"></script>
+    <script src="./js/contactInfoModal.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+
+</html>
