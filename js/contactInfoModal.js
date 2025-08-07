@@ -33,6 +33,7 @@ function fillPopup(index) {
         `<h2 class="contactName">${contacts[index].name}</h2>
          <p class="contactDetails age">Age: ${contacts[index].age}</p>
          <p class="contactDetails phoneNumber">Phone Number: ${contacts[index].phoneNum}</p>
+         <p class="contactDetails email">Email: ${contacts[index].email}</p>
          <p class="contactDetails contactAddress">Address: ${contacts[index].address}</p>`;
 
     modalContent.append(contactModaInfo);
